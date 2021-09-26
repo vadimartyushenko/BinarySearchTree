@@ -13,6 +13,7 @@ namespace BinarySearchTree
 			binaryTree.Add(10);
 			binaryTree.Add(3);
 			binaryTree.Add(21);
+			binaryTree.Add(-1);
 
 			binaryTree.PrintTree();
 

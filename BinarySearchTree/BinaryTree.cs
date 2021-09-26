@@ -32,19 +32,18 @@ namespace BinarySearchTree
 			}
 
 			currentNode ??= RootNode;
-
 			node.ParentNode = currentNode;
-			int result;
+			
+			var result = node.Data.CompareTo(currentNode.Data);
 
-			return (result = node.Data.CompareTo(currentNode.Data)) == 0
-				? currentNode
-				: result < 0
-					? currentNode.LeftNode == null
-						? currentNode.LeftNode = node
-						: Add(node, currentNode.LeftNode)
-					: currentNode.RightNode == null
-						? currentNode.RightNode = node
-						: Add(node, currentNode.RightNode);
+			if (result == 0)
+				return currentNode;
+
+			if (result < 0)
+				return currentNode.LeftNode == null ? currentNode.LeftNode = node : Add(node, currentNode.LeftNode);
+			else
+				return currentNode.RightNode == null ? currentNode.RightNode = node : Add(node, currentNode.RightNode);
+
 		}
 
 		/// <summary>
