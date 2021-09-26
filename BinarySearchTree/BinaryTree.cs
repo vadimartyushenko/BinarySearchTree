@@ -75,7 +75,7 @@ namespace BinarySearchTree
 		/// <param name="startNode">Узел, с которого начинается вывод</param>
 		/// <param name="indent">Отступ</param>
 		/// <param name="side">Сторона узла</param>
-		private void PrintTree(BinaryTreeNode<T> startNode, string indent = "", Side? side = null)
+		private static void PrintTree(BinaryTreeNode<T> startNode, string indent = "", Side? side = null)
 		{
 			if (startNode == null) return;
 
